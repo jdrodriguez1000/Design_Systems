@@ -129,32 +129,7 @@ Para cada lección nueva define:
 
 ---
 
-### Paso 5 — Mostrar en pantalla
-
-Antes de guardar, muestra las lecciones nuevas con este formato:
-
-```
-## Lecciones aprendidas — $ARGUMENTS
-
-Encontré X concepto(s) nuevo(s):
-
-**[título]**
-Contexto: ...
-Qué aprendí: ...
-Por qué importa: ...
-Ejemplo del proyecto: ...
-Tags: ...
-```
-
-Si no hay conceptos nuevos, indica:
-```
-No encontré conceptos nuevos. Todo ya está registrado en lessons.db.
-```
-Y detente aquí — no ejecutes el Paso 6.
-
----
-
-### Paso 6 — Guardar en la base de datos
+### Paso 5 — Guardar en la base de datos
 
 Por cada lección nueva, ejecuta un comando de inserción. Reemplaza los valores reales donde dice VALOR:
 
@@ -172,11 +147,13 @@ print('Guardado: TITLE')
 "
 ```
 
+Si no hay conceptos nuevos, indica al usuario y detente — no ejecutes los pasos siguientes.
+
 Ejecuta un comando separado por cada lección nueva.
 
 ---
 
-### Paso 7 — Confirmar
+### Paso 6 — Confirmar
 
 Muestra el total de lecciones guardadas en esta sesión y el total acumulado en la BD:
 
@@ -194,10 +171,29 @@ print(f'Total acumulado en BD: {total}')
 
 ---
 
-### Paso 8 — Subir a GitHub
+### Paso 7 — Subir a GitHub
 
 ```bash
 git add -A && git commit -m "lessons($ARGUMENTS): agrega lecciones aprendidas del proyecto" && git push
 ```
 
-Si el push falla por falta de cambios (`nothing to commit`), ignóralo — significa que no hubo lecciones nuevas. Confirma al usuario que todo está sincronizado con GitHub.
+---
+
+### Paso 8 — Mostrar lecciones en pantalla
+
+Muestra las lecciones guardadas en este proyecto con el siguiente formato:
+
+```
+## Lecciones aprendidas — $ARGUMENTS
+
+Guardé X concepto(s) nuevo(s):
+
+**[título]**
+Contexto: ...
+Qué aprendí: ...
+Por qué importa: ...
+Ejemplo del proyecto: ...
+Tags: ...
+```
+
+Confirma al usuario que todo está sincronizado con GitHub.
