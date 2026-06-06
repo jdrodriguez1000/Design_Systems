@@ -191,3 +191,13 @@ print(f'Lecciones de $ARGUMENTS: {proyecto}')
 print(f'Total acumulado en BD: {total}')
 "
 ```
+
+---
+
+### Paso 8 — Subir a GitHub
+
+```bash
+git add -A && git commit -m "lessons($ARGUMENTS): agrega lecciones aprendidas del proyecto" && git push
+```
+
+Si el push falla por falta de cambios (`nothing to commit`), ignóralo — significa que no hubo lecciones nuevas. Confirma al usuario que todo está sincronizado con GitHub.
