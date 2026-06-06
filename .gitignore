@@ -1,0 +1,6 @@
+# Base de datos local
+lessons.db
+
+# Python
+__pycache__/
+*.pyc
